@@ -41,16 +41,7 @@ class PPOAgent:
         self.policy_clip = 0.2
         self.value_clip = 0.2 
         # buffer size
-        self.buffer_size = buffer_size
-
-    def _tanh_squash(self, u, eps=1e-6):
-        a = torch.tanh(u)
-        log_det = torch.sum(torch.log(1.0 - a.pow(2) + eps), dim=-1) 
-        return a, log_det
-
-    def _atanh(self, a, eps=1e-6):
-        a = torch.clamp(a, -1 + eps, 1 - eps)
-        return 0.5 * (torch.log1p(a) - torch.log1p(-a))
+        self.buffer_size = buffer_sizeS
 
     def select_action(self, state):
         device = self.device
