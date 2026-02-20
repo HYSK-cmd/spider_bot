@@ -1,0 +1,10 @@
+.venv/
+.env/
+venv/
+pytorch tutorial/
+videos/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.DS_Store
